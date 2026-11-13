@@ -1,0 +1,17 @@
+{
+  "name": "Mi Atlas de Viajes",
+  "short_name": "Mi Atlas",
+  "description": "Pasaporte de viajes: países, lugares y recuerdos en un globo.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#2C0A11",
+  "theme_color": "#2C0A11",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/logo.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
