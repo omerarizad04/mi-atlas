@@ -1,5 +1,5 @@
 /* Service worker: hace que Mi Atlas abra al instante y funcione sin internet. */
-const CACHE = 'mi-atlas-mweg34yw';
+const CACHE = 'mi-atlas-mwfwo2kx';
 const SHELL = ['./', 'index.html', 'store.js', 'seed.js', 'world.js', 'manifest.json', 'icons/logo.svg', 'icons/apple-touch-icon.png', 'icons/icon-192.png', 'icons/icon-512.png'];
 const CDN = /^https:\/\/(cdnjs\.cloudflare\.com|cdn\.jsdelivr\.net|fonts\.googleapis\.com|fonts\.gstatic\.com)\//;
 

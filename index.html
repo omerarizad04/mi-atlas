@@ -267,6 +267,57 @@ button.emblem{cursor:pointer;font:inherit;color:inherit;width:100%}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend i.off{background:var(--land);box-shadow:inset 0 0 0 1px var(--land-line)}
 .legend i{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--gold-hot),var(--gold-deep))}
+/* Portada: controles finos, estilo grabado en oro */
+.ctrls{gap:0;border:1px solid rgba(226,190,104,.32);border-radius:999px;background:rgba(30,6,11,.38);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);overflow:hidden}
+.ctrls button{width:38px;height:38px;border:0;border-radius:0;background:transparent;color:rgba(226,190,104,.85);transition:color .2s,background .2s}
+.ctrls button + button{border-top:1px solid rgba(226,190,104,.18)}
+.ctrls button:hover{color:var(--gold-hot);background:rgba(226,190,104,.08)}
+.ctrls svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round}
+.legend{background:none;padding:0;gap:7px;font-family:var(--f-display);font-stretch:112%;font-weight:500;font-size:9.5px;letter-spacing:.24em;color:rgba(226,190,104,.78)}
+.legend i{width:6px;height:6px;box-shadow:0 0 6px rgba(247,227,168,.6)}
+.legend i.off{background:transparent;box-shadow:inset 0 0 0 1px rgba(226,190,104,.55)}
+.cover-title .logo{width:34px;height:34px;border-radius:8px;box-shadow:0 0 0 1px rgba(226,190,104,.3),0 4px 12px rgba(0,0,0,.35)}
+.cover-title{font-weight:500;letter-spacing:.3em;font-size:9.5px;color:rgba(226,190,104,.75)}
+.cover-title b{font-family:var(--f-serif);font-style:italic;font-weight:600;font-size:19px;letter-spacing:0;text-transform:none;line-height:1.1}
+.tip{font-family:var(--f-serif);font-weight:600;font-size:14px;border-radius:2px;padding:4px 10px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+/* Selector globo / mapa de puntos */
+.mode-toggle{position:absolute;z-index:3;top:calc(30px + env(safe-area-inset-top,0px));right:calc(22px + env(safe-area-inset-right,0px));display:flex;gap:16px;align-items:center}
+.mode-toggle button{border:0;background:transparent;color:rgba(226,190,104,.55);font-family:var(--f-display);font-stretch:112%;font-weight:500;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;padding:6px 0 6px .26em;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.mode-toggle button:hover{color:var(--gold)}
+.mode-toggle button.on{color:var(--gold-hot);border-bottom-color:rgba(247,227,168,.75)}
+
+@media (max-width:430px){ .cover-title span{display:none} }
+/* Cronología por año (minimalista) */
+.tl-link{display:flex;align-items:baseline;gap:10px;width:100%;background:none;border:0;border-top:1px solid rgba(30,34,48,.18);border-bottom:1px solid rgba(30,34,48,.18);padding:14px 2px;text-align:left;color:var(--ink);transition:padding .2s}
+.tl-link:hover{padding-left:8px}
+.tl-link-t{flex:1;font-family:var(--f-display);font-stretch:125%;font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+.tl-link-t i{font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:14px;letter-spacing:0;text-transform:none;color:var(--muted);margin-left:4px}
+.tl-link-m{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.tl-link .go{color:var(--faint)}
+.tl-nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;padding:2px 0 8px;border-bottom:1px solid rgba(30,34,48,.14)}
+.tl-nav::-webkit-scrollbar{display:none}
+.tl-nav button{flex:none;background:none;border:0;padding:4px 0;font-family:var(--f-mono);font-size:13px;color:var(--faint);border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s}
+.tl-nav button:hover{color:var(--ink)}
+.tl-nav button.on{color:var(--wine);border-bottom-color:var(--wine)}
+.tl{display:flex;flex-direction:column}
+.tl-year{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid rgba(30,34,48,.1)}
+.tl-y{font-family:var(--f-serif);font-style:italic;font-weight:500;font-size:20px;line-height:1.2;color:var(--wine);font-variant-numeric:lining-nums}
+.tl-rows{display:flex;flex-direction:column;gap:10px;min-width:0}
+.tl-row{display:grid;grid-template-columns:auto 1fr;column-gap:8px;align-items:baseline;background:none;border:0;padding:0;text-align:left;color:var(--ink)}
+.tl-row .flag{font-size:15px}
+.tl-c{font-family:var(--f-serif);font-weight:600;font-size:17px;line-height:1.2}
+.tl-row small{grid-column:2;font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-row:hover .tl-c{color:var(--wine)}
+.tl-empty{font-family:var(--f-serif);font-style:italic;font-size:16px;color:var(--muted)}
+.tl-undated summary{cursor:pointer;list-style:none;font-family:var(--f-mono);font-size:12.5px;color:var(--muted);padding:6px 0}
+.tl-undated summary::-webkit-details-marker{display:none}
+.tl-undated summary::before{content:"+ ";color:var(--wine)}
+.tl-undated[open] summary::before{content:"– "}
+.tl-set{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;padding:7px 0;border-bottom:1px dotted rgba(30,34,48,.2)}
+.tl-set .flag{font-size:15px}
+.tl-set .tl-c{font-size:15.5px}
+.tl-set select{background:transparent;border:0;border-bottom:1px solid rgba(30,34,48,.3);border-radius:0;padding:3px 2px;font-family:var(--f-mono);font-size:13px;color:var(--ink)}
+.when{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .tip{position:absolute;z-index:4;pointer-events:none;background:var(--paper-hi);color:var(--ink);padding:5px 10px;border-radius:4px;font-size:13px;font-weight:600;white-space:nowrap;transform:translate(-50%,calc(-100% - 12px));box-shadow:0 4px 14px rgba(0,0,0,.3)}
 .tip small{color:var(--muted);font-weight:400}
 .banner{position:absolute;z-index:5;top:12px;left:50%;transform:translateX(-50%);width:min(520px,calc(100% - 32px));background:var(--paper-hi);color:var(--ink);border-top:4px solid var(--wine);border-radius:6px;padding:12px 14px;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
@@ -314,11 +365,12 @@ input,textarea,.mem p,.note p{-webkit-user-select:text;user-select:text}
     <canvas id="globe" aria-hidden="true"></canvas>
     <canvas id="fx"></canvas>
     <div class="cover-title" aria-hidden="true"><img class="logo" src="icons/logo.svg" alt=""><span>Pasaporte de viajes<b>Mi Atlas</b></span></div>
+    <div class="mode-toggle" role="group" aria-label="Tipo de mapa"><button data-mode="globe">Globo 3D</button><button data-mode="flat">Mapa</button></div>
     <div class="legend"><span><i></i>Visitado</span><span><i class="off"></i>No visitado</span></div>
     <div class="ctrls">
-      <button id="zin" title="Acercar" aria-label="Acercar">+</button>
-      <button id="zout" title="Alejar" aria-label="Alejar">−</button>
-      <button id="home" title="Ver el mundo" aria-label="Ver el mundo">⌂</button>
+      <button id="zin" title="Acercar" aria-label="Acercar"><svg viewBox="0 0 20 20"><path d="M10 4.5v11M4.5 10h11"/></svg></button>
+      <button id="zout" title="Alejar" aria-label="Alejar"><svg viewBox="0 0 20 20"><path d="M4.5 10h11"/></svg></button>
+      <button id="home" title="Ver el mundo" aria-label="Ver el mundo"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6.2"/><path d="M3.8 10h12.4M10 3.8c-2.2 2.4-2.2 10 0 12.4M10 3.8c2.2 2.4 2.2 10 0 12.4"/></svg></button>
     </div>
     <div class="tip" id="tip" hidden></div>
     <div class="banner" id="banner" hidden></div>
@@ -406,10 +458,36 @@ const path = d3.geoPath(proj, ctx);
 const R0 = () => Math.min(W, H) * 0.42;
 function applyView(){ proj.rotate([-view.lon, -view.lat]).scale(R0() * view.k).translate([W/2, H/2]); }
 
+/* Mapa plano de puntos (misma tapa, mismos colores) */
+let mapMode = 'globe';
+try { if (localStorage.getItem('atlas-map-mode') === 'flat') mapMode = 'flat'; } catch {}
+const fproj = d3.geoEquirectangular();
+let fbase = { s:1, tx:0, ty:0 }, fv = d3.zoomIdentity, idBuf = null;
+const idCv = document.createElement('canvas'), idCx = idCv.getContext('2d', { willReadFrequently:true });
+const idPath = d3.geoPath(fproj, idCx);
+function fitFlat(){
+  const padT = Math.min(84, H * .17), padB = Math.min(70, H * .15);
+  fproj.scale(1).translate([0,0]).fitExtent([[16, padT], [W - 16, H - padB]], { type:'MultiPoint', coordinates:[[-179.99, 83.5], [179.99, -57]] });
+  fbase = { s:fproj.scale(), tx:fproj.translate()[0], ty:fproj.translate()[1] };
+  idCv.width = Math.ceil(W); idCv.height = Math.ceil(H);
+}
+function applyFlat(){ fproj.scale(fbase.s * fv.k).translate([fbase.tx * fv.k + fv.x, fbase.ty * fv.k + fv.y]); }
+function featAt(x, y){
+  if (!idBuf) return null;
+  const xi = Math.round(x), yi = Math.round(y);
+  if (xi < 0 || yi < 0 || xi >= idCv.width || yi >= idCv.height) return null;
+  const i = (yi * idCv.width + xi) * 4;
+  if (idBuf[i+2] !== 200 || idBuf[i+3] !== 255) return null;
+  return FEATURES[idBuf[i] + idBuf[i+1] * 256 - 1] || null;
+}
+/* Punto en pantalla de un lugar, o null si queda en la cara oculta del globo */
+function P(lon, lat){ return mapMode === 'flat' ? fproj([lon, lat]) : visible(lon, lat) ? proj([lon, lat]) : null; }
+
 function resize(){
   const r = stage.getBoundingClientRect(); W = Math.max(1, r.width); H = Math.max(1, r.height); DPR = Math.min(2, devicePixelRatio || 1);
   for (const c of [cvG, cvF, cvS]) { c.width = W*DPR; c.height = H*DPR; }
   for (const c of [ctx, fx, sx]) c.setTransform(DPR,0,0,DPR,0,0);
+  fitFlat(); if (mapMode === 'flat') { zoomExtents(); fv = zoom.constrain()(fv, [[0,0],[W,H]], zoom.translateExtent()); syncZoom(); }
   drawStars(); dirty = true;
 }
 function drawStars(){
@@ -425,7 +503,52 @@ const C = n => css.getPropertyValue(n).trim();
 const COL = { ocean:C('--ocean'), oceanHi:C('--ocean-hi'), land:C('--land'), line:C('--land-line'), amber:C('--gold'), hot:C('--gold-hot'), deep:C('--gold-deep'), ink:C('--foil-ink') };
 function foil(R){ const cx = W/2, cy = H/2; const g = ctx.createLinearGradient(cx - R, cy - R, cx + R, cy + R); g.addColorStop(0, COL.hot); g.addColorStop(.45, COL.amber); g.addColorStop(.7, COL.deep); g.addColorStop(1, COL.amber); return g; }
 
+function selAtlas(){ return route.level === 'country' ? S.countries[route.id]?.atlasId : route.level === 'place' ? S.countries[S.places[route.id]?.country]?.atlasId : null; }
+function drawFlat(){
+  applyFlat();
+  ctx.clearRect(0,0,W,H);
+  // mapa de colores oculto: cada país pinta su índice para saber a qué país cae cada punto
+  idCx.clearRect(0, 0, idCv.width, idCv.height);
+  const ant = visitedAtlas().has('010');
+  FEATURES.forEach((f, i) => { if (f.id === '010' && !ant) return; const n = i + 1; idCx.fillStyle = `rgb(${n & 255},${n >> 8},200)`; idCx.beginPath(); idPath(f); idCx.fill(); });
+  idBuf = idCx.getImageData(0, 0, idCv.width, idCv.height).data;
+  const visited = visitedAtlas(), sel = selAtlas(), yr = yearAtlas(), hov = hoverInfo?.atlasId;
+  const contOf = {}; if (hoverCont) for (const c of visitedCountries()) contOf[c.atlasId] = c.continent;
+  const sp = clamp(W / 118, 3.6, 7.5), r = sp * .37;
+  const tr = fproj.translate(), ox = ((tr[0] % sp) + sp) % sp, oy = ((tr[1] % sp) + sp) % sp;
+  const groups = { off:[], on:[], hot:[], dim:[] }, hits = {};
+  const w = idCv.width;
+  for (let y = oy; y < H; y += sp) for (let x = ox; x < W; x += sp) {
+    const i = ((y | 0) * w + (x | 0)) * 4;
+    if (idBuf[i+2] !== 200 || idBuf[i+3] !== 255) continue;
+    const f = FEATURES[idBuf[i] + idBuf[i+1] * 256 - 1]; if (!f) continue;
+    const id = f.id;
+    if (!visited.has(id)) { groups[id === hov ? 'dim' : 'off'].push(x, y); continue; }
+    hits[id] = 1;
+    let g = 'on';
+    if (hoverCont) g = contOf[id] === hoverCont ? 'hot' : 'dim';
+    else if (yr) g = yr.has(id) ? 'hot' : 'dim';
+    else if (sel) g = id === sel ? 'hot' : 'on';
+    if (id === hov) g = 'hot';
+    groups[g].push(x, y);
+  }
+  // países muy pequeños (Mónaco, Aruba…) que no caen en ningún punto: uno en su centro
+  for (const id of visited) if (!hits[id] && FEAT[id]) {
+    const c = fproj(d3.geoCentroid(FEAT[id])); if (!c) continue;
+    let g = 'on'; if (hoverCont) g = contOf[id] === hoverCont ? 'hot' : 'dim'; else if (yr) g = yr.has(id) ? 'hot' : 'dim'; else if (sel && id === sel) g = 'hot';
+    groups[g].push(c[0], c[1]);
+  }
+  const dots = (arr, rr) => { ctx.beginPath(); for (let k = 0; k < arr.length; k += 2) { ctx.moveTo(arr[k] + rr, arr[k+1]); ctx.arc(arr[k], arr[k+1], rr, 0, 7); } ctx.fill(); };
+  ctx.fillStyle = 'rgba(226,190,104,.2)'; dots(groups.off, r * .85);
+  ctx.fillStyle = 'rgba(226,190,104,.42)'; dots(groups.dim, r);
+  ctx.save(); ctx.shadowColor = 'rgba(247,227,168,.55)'; ctx.shadowBlur = 6;
+  ctx.fillStyle = COL.amber; dots(groups.on, r * 1.08);
+  ctx.fillStyle = COL.hot; dots(groups.hot, r * 1.15);
+  ctx.restore();
+}
+
 function drawGlobe(){
+  if (mapMode === 'flat') return drawFlat();
   applyView();
   const R = proj.scale(), cx = W/2, cy = H/2;
   ctx.clearRect(0,0,W,H);
@@ -446,12 +569,13 @@ function drawGlobe(){
   ctx.beginPath(); for (const f of FEATURES) if (!visited.has(f.id)) path(f);
   ctx.fillStyle = COL.land; ctx.fill();
   // países visitados con brillo
-  const sel = route.level === 'country' ? S.countries[route.id]?.atlasId : route.level === 'place' ? S.countries[S.places[route.id]?.country]?.atlasId : null;
+  const sel = selAtlas(), yr = yearAtlas();
   ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.45)'; ctx.shadowBlur = 6; ctx.shadowOffsetY = 1.5; const FOIL = foil(R);
   const contOf = {}; if (hoverCont) for (const c of visitedCountries()) contOf[c.atlasId] = c.continent;
   for (const id of visited) {
     const f = FEAT[id]; if (!f) continue; ctx.beginPath(); path(f);
     if (hoverCont) { const on = contOf[id] === hoverCont; ctx.fillStyle = on ? COL.hot : FOIL; ctx.globalAlpha = on ? 1 : .25; }
+    else if (yr) { const on = yr.has(id); ctx.fillStyle = on ? COL.hot : FOIL; ctx.globalAlpha = on ? 1 : .3; }
     else { ctx.fillStyle = id === sel ? COL.hot : FOIL; ctx.globalAlpha = sel && id !== sel ? .7 : 1; }
     ctx.fill();
   }
@@ -471,13 +595,16 @@ function focusCountry(){ return route.level === 'country' ? route.id : route.lev
 
 function drawFx(t){
   fx.clearRect(0,0,W,H);
-  const fc = focusCountry(), showAll = view.k > 14;
-  const r0 = 2.6 + Math.min(view.k, 12) * 0.22;
+  const flat = mapMode === 'flat', zk = flat ? fv.k * 0.45 : view.k;
+  const fc = focusCountry(), showAll = zk > 14;
+  const r0 = flat ? 2 + Math.min(fv.k, 12) * 0.2 : 2.6 + Math.min(view.k, 12) * 0.22;
+  const ys = route.level === 'trips' ? yearSel : null;
   const labels = [];
   for (const [id,p] of Object.entries(S.places)) {
-    if (!visible(p.lon, p.lat)) continue;
-    const [x,y] = proj([p.lon, p.lat]);
+    const q = P(p.lon, p.lat); if (!q) continue;
+    const [x,y] = q;
     const isSel = route.level === 'place' && route.id === id;
+    if (ys && yearOf(p) !== ys) { fx.beginPath(); fx.arc(x,y, r0 * .7, 0, 7); fx.fillStyle = 'rgba(255,244,220,.35)'; fx.fill(); continue; }
     const ph = reduceMotion ? 0 : ((t/2200 + (p.order||0)*0.137) % 1);
     if (ph) { fx.beginPath(); fx.arc(x,y, r0 + ph*14, 0, 7); fx.strokeStyle = `rgba(247,227,168,${(1-ph)*0.6})`; fx.lineWidth = 1.2; fx.stroke(); }
     const g = fx.createRadialGradient(x,y,0,x,y,r0*3.2); g.addColorStop(0,'rgba(247,227,168,.7)'); g.addColorStop(1,'rgba(226,190,104,0)');
@@ -491,8 +618,8 @@ function drawFx(t){
     fx.lineWidth = 4; fx.strokeStyle = 'rgba(44,10,17,.9)'; fx.strokeText(l.name, l.x + 10, l.y);
     fx.fillStyle = l.sel ? COL.hot : COL.ink; fx.fillText(l.name, l.x + 10, l.y);
   }
-  if (pick?.lat != null && visible(pick.lon, pick.lat)) {
-    const [x,y] = proj([pick.lon, pick.lat]);
+  if (pick?.lat != null && P(pick.lon, pick.lat)) {
+    const [x,y] = P(pick.lon, pick.lat);
     fx.strokeStyle = COL.hot; fx.lineWidth = 2;
     fx.beginPath(); fx.arc(x, y, 9, 0, 7); fx.stroke();
     fx.beginPath(); fx.moveTo(x-16,y); fx.lineTo(x-5,y); fx.moveTo(x+5,y); fx.lineTo(x+16,y); fx.moveTo(x,y-16); fx.lineTo(x,y-5); fx.moveTo(x,y+5); fx.lineTo(x,y+16); fx.stroke();
@@ -507,14 +634,29 @@ function frame(t){
   if (flight) {
     const p = clamp((t - flight.t0) / flight.dur, 0, 1); flight.step(p); dirty = true;
     if (p >= 1) { flight = null; syncZoom(); }
-  } else if (route.level === 'world' && !reduceMotion && !pick && t > spinPausedUntil) {
+  } else if (mapMode === 'globe' && (route.level === 'world' || route.level === 'trips') && !reduceMotion && !pick && t > spinPausedUntil) {
     view.lon += dt * 0.004; dirty = true;
   }
   if (dirty) { drawGlobe(); dirty = false; }
   drawFx(t);
   requestAnimationFrame(frame);
 }
+/* En el mapa plano: misma escala que el globo (píxeles por radián) para que el encuadre sea el mismo */
+function flatTo(lon, lat, kf, dur = 1200){
+  const b = [fbase.s * lon * Math.PI / 180 + fbase.tx, -fbase.s * lat * Math.PI / 180 + fbase.ty];
+  kf = clamp(kf, 1, 40);
+  const t1 = zoom.constrain()(d3.zoomIdentity.translate(W/2 - b[0]*kf, H/2 - b[1]*kf).scale(kf), [[0,0],[W,H]], zoom.translateExtent());
+  if (reduceMotion) { fv = t1; dirty = true; syncZoom(); return; }
+  const k0 = fv.k, k1 = t1.k, c0 = [(W/2 - fv.x)/k0, (H/2 - fv.y)/k0], c1 = [(W/2 - t1.x)/k1, (H/2 - t1.y)/k1];
+  flight = { t0: performance.now(), dur, step(p){
+    const e = d3.easeCubicInOut(p), k = Math.exp(Math.log(k0) + (Math.log(k1) - Math.log(k0)) * e);
+    const cx = c0[0] + (c1[0] - c0[0]) * e, cy = c0[1] + (c1[1] - c0[1]) * e;
+    fv = p >= 1 ? t1 : d3.zoomIdentity.translate(W/2 - cx*k, H/2 - cy*k).scale(k);
+  }};
+}
+function flatZoomBy(f){ const c = [(W/2 - fv.x)/fv.k, (H/2 - fv.y)/fv.k]; const lon = (c[0] - fbase.tx) / fbase.s * 180 / Math.PI, lat = -(c[1] - fbase.ty) / fbase.s * 180 / Math.PI; flatTo(lon, lat, fv.k * f, 500); }
 function flyTo(lon, lat, k, dur = 1400){
+  if (mapMode === 'flat') return flatTo(lon, lat, R0() * k / fbase.s, dur);
   k = clamp(k, 0.7, 80);
   if (reduceMotion) { Object.assign(view, {lon, lat, k}); dirty = true; syncZoom(); return; }
   const from = [view.lon, view.lat], to = [lon, lat], k0 = view.k, k1 = k;
@@ -535,6 +677,7 @@ const zoom = d3.zoom().scaleExtent([0.7, 80]).clickDistance(6)
   .on('start', () => { flight = null; spinPausedUntil = performance.now() + 6000; })
   .on('zoom', e => {
     const t = e.transform;
+    if (mapMode === 'flat') { fv = t; dirty = true; return; }
     if (Math.abs(t.k - lastZ.k) > 1e-9) view.k = t.k;
     else {
       const f = 180 / Math.PI / (R0() * view.k);
@@ -544,33 +687,58 @@ const zoom = d3.zoom().scaleExtent([0.7, 80]).clickDistance(6)
     lastZ = t; dirty = true; spinPausedUntil = performance.now() + 6000;
   });
 const fxSel = d3.select(cvF).call(zoom).on('dblclick.zoom', null);
-function syncZoom(){ lastZ = d3.zoomIdentity.scale(view.k); cvF.__zoom = lastZ; }
+function syncZoom(){
+  if (mapMode === 'flat') { cvF.__zoom = fv; return; }
+  lastZ = d3.zoomIdentity.scale(view.k); cvF.__zoom = lastZ;
+}
+function zoomExtents(){
+  if (mapMode === 'flat') zoom.scaleExtent([1, 40]).translateExtent([[0,0],[W,H]]);
+  else zoom.scaleExtent([0.7, 80]).translateExtent([[-Infinity,-Infinity],[Infinity,Infinity]]);
+}
+function setMode(m){
+  if (m === mapMode) return;
+  mapMode = m; flight = null;
+  try { localStorage.setItem('atlas-map-mode', m); } catch {}
+  document.querySelectorAll('[data-mode]').forEach(b => { b.classList.toggle('on', b.dataset.mode === m); b.setAttribute('aria-pressed', b.dataset.mode === m); });
+  stage.setAttribute('aria-label', m === 'flat' ? 'Mapa de puntos con los lugares visitados' : 'Globo con los lugares visitados');
+  zoomExtents();
+  if (m === 'flat') fv = d3.zoomIdentity;
+  syncZoom(); hoverInfo = null; $('#tip').hidden = true; dirty = true;
+  if (pick?.lat != null) flyTo(pick.lon, pick.lat, 24, 900);
+  else if (!['world','quiz','trips'].includes(route.level)) camera();
+  else if (m === 'globe') { view.k = 1; syncZoom(); }
+}
+document.querySelectorAll('[data-mode]').forEach(b => { b.classList.toggle('on', b.dataset.mode === mapMode); b.setAttribute('aria-pressed', b.dataset.mode === mapMode); b.onclick = () => setMode(b.dataset.mode); });
 
 function hitTest(x, y){
   let best = null, bd = 18;
   for (const [id,p] of Object.entries(S.places)) {
-    if (!visible(p.lon, p.lat)) continue;
-    const [px,py] = proj([p.lon,p.lat]); const d = Math.hypot(px-x, py-y);
+    const q = P(p.lon, p.lat); if (!q) continue;
+    const d = Math.hypot(q[0]-x, q[1]-y);
     if (d < bd) { bd = d; best = id; }
   }
   if (best) return { type:'place', id:best, name:S.places[best].name, atlasId:null };
-  const ll = proj.invert([x,y]);
-  if (!ll || Math.hypot(x - W/2, y - H/2) > proj.scale()) return null;
-  const visited = {}; for (const c of visitedCountries()) visited[c.atlasId] = c.id;
-  for (const f of FEATURES) {
-    if (d3.geoContains(f, ll)) {
-      return visited[f.id] ? { type:'country', id:visited[f.id], atlasId:f.id, name:S.countries[visited[f.id]].name, ll }
-                           : { type:'other', atlasId:f.id, name:INFO[f.id]?.[1] || f.properties.name, ll };
-    }
+  let ll, f = null;
+  if (mapMode === 'flat') {
+    ll = fproj.invert([x,y]);
+    if (!ll || Math.abs(ll[0]) > 180 || Math.abs(ll[1]) > 90) return null;
+    f = featAt(x, y);
+  } else {
+    ll = proj.invert([x,y]);
+    if (!ll || Math.hypot(x - W/2, y - H/2) > proj.scale()) return null;
+    f = FEATURES.find(ft => d3.geoContains(ft, ll)) || null;
   }
-  return { type:'sea', ll };
+  if (!f) return { type:'sea', ll };
+  const visited = {}; for (const c of visitedCountries()) visited[c.atlasId] = c.id;
+  return visited[f.id] ? { type:'country', id:visited[f.id], atlasId:f.id, name:S.countries[visited[f.id]].name, ll }
+                       : { type:'other', atlasId:f.id, name:INFO[f.id]?.[1] || f.properties.name, ll };
 }
 function localXY(e){ const r = cvF.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
 cvF.addEventListener('click', e => {
   const [x,y] = localXY(e); const h = hitTest(x,y);
   if (pick) {
     if (!h || !h.ll && h.type !== 'place') return;
-    const ll = h.ll || proj.invert([x,y]);
+    const ll = h.ll || (mapMode === 'flat' ? fproj : proj).invert([x,y]);
     pick.lon = +ll[0].toFixed(4); pick.lat = +ll[1].toFixed(4);
     if (h.atlasId && h.atlasId !== pick.atlasId) toast('Ese punto está en ' + (INFO[h.atlasId]?.[1] || 'otro país') + '. Comprueba el pin.');
     renderBanner(); return;
@@ -596,8 +764,8 @@ cvF.addEventListener('mousemove', e => {
   });
 });
 cvF.addEventListener('mouseleave', () => { $('#tip').hidden = true; if (hoverInfo) { hoverInfo = null; dirty = true; } });
-$('#zin').onclick = () => flyTo(view.lon, view.lat, view.k * 1.8, 500);
-$('#zout').onclick = () => flyTo(view.lon, view.lat, view.k / 1.8, 500);
+$('#zin').onclick = () => mapMode === 'flat' ? flatZoomBy(1.8) : flyTo(view.lon, view.lat, view.k * 1.8, 500);
+$('#zout').onclick = () => mapMode === 'flat' ? flatZoomBy(1 / 1.8) : flyTo(view.lon, view.lat, view.k / 1.8, 500);
 $('#home').onclick = () => go('');
 
 /* ---------- Vistas de cámara ---------- */
@@ -615,10 +783,11 @@ function countryCamera(cid){
   return [c0[0], c0[1], clamp(0.82 / Math.max(ang, 0.002), 1.3, 45)];
 }
 function camera(){
+  if (mapMode === 'flat' && ['world','quiz','trips'].includes(route.level)) { flatTo(0, 0, 1); return; }
   if (route.level === 'continent') { const v = CONTINENTS[route.id].view; flyTo(v[0], v[1], v[2]); }
   else if (route.level === 'country') { const [a,b,k] = countryCamera(route.id); flyTo(a,b,k); }
   else if (route.level === 'place') { const p = S.places[route.id]; flyTo(p.lon, p.lat, Math.max(PLACE_K, countryCamera(p.country)[2] * 1.4)); }
-  else if (route.level === 'world' || route.level === 'quiz') { if (view.k > 1.4 || route.level === 'world') flyTo(view.lon + (view.k > 1.4 ? 0 : 0), clamp(view.lat, 10, 35), 1, 1500); }
+  else if (['world','quiz','trips'].includes(route.level)) { if (view.k > 1.4 || route.level !== 'quiz') flyTo(view.lon + (view.k > 1.4 ? 0 : 0), clamp(view.lat, 10, 35), 1, 1500); }
 }
 
 /* ---------- Rutas ---------- */
@@ -626,6 +795,7 @@ function parse(hash){
   const id = decodeURIComponent((hash || '').replace(/^#/, ''));
   if (!id) return { level:'world', id:null };
   if (id === 'quiz') return { level:'quiz', id:null };
+  if (id === 'viajes') return { level:'trips', id:null };
   if (CONTINENTS[id]) return { level:'continent', id };
   if (S.countries[id]) return { level:'country', id };
   if (S.places[id]) return { level:'place', id };
@@ -646,6 +816,7 @@ function crumbs(){
   if (route.level === 'country') { country = route.id; cont = S.countries[country]?.continent; }
   if (route.level === 'place') { place = route.id; country = S.places[place]?.country; cont = S.countries[country]?.continent; }
   if (route.level === 'quiz') parts.push({ id:'quiz', name:'Juego' });
+  if (route.level === 'trips') parts.push({ id:'viajes', name:'Por año' });
   if (cont && CONTINENTS[cont]) parts.push({ id:cont, name:CONTINENTS[cont].name });
   if (country && S.countries[country]) parts.push({ id:country, name:S.countries[country].name });
   if (place) parts.push({ id:place, name:S.places[place].name });
@@ -664,12 +835,14 @@ function render(){
     : route.level === 'country' ? viewCountry(route.id)
     : route.level === 'place' ? viewPlace(route.id)
     : route.level === 'quiz' ? viewQuiz()
+    : route.level === 'trips' ? viewTrips()
     : viewWorld();
   hoverCont = null; setHoverCont.k = null;
-  const pg = { world:1, continent:2 + CONT_ORDER.indexOf(route.id), quiz:9, country:10 + Object.keys(S.countries).sort().indexOf(route.id), place:30 + Object.keys(S.places).sort().indexOf(route.id) }[route.level];
+  const pg = { world:1, continent:2 + CONT_ORDER.indexOf(route.id), quiz:9, trips:8, country:10 + Object.keys(S.countries).sort().indexOf(route.id), place:30 + Object.keys(S.places).sort().indexOf(route.id) }[route.level];
   $('#pageno').textContent = 'Pág. ' + String(pg).padStart(2, '0');
-  v.innerHTML = html + (route.level === 'world' && S.status === 'ready' ? window.__backupHtml() : ''); v.scrollTop = 0; window.__bindBackup(v);
-  animateProgress();
+  const keepTop = render.keep ? v.scrollTop : 0; render.keep = false;
+  v.innerHTML = html + (route.level === 'world' && S.status === 'ready' ? window.__backupHtml() : ''); v.scrollTop = keepTop; window.__bindBackup(v);
+  animateProgress(!!keepTop);
 }
 
 function viewOffline(){
@@ -701,6 +874,7 @@ function viewWorld(){
       </dl>
     </div>
     ${progressBlock()}
+    ${tripsLink()}
     <div class="section"><h3>Sellos <i>Entry stamps</i></h3><div class="stamp-wall">${vc.map(stampFor).join('')}</div></div>
     <div class="section">
       <div class="section-head"><h3>Continentes <i>Continents</i></h3>${canWrite ? `<button class="btn small" data-act="add-place">+ Añadir lugar</button>` : ''}</div>
@@ -834,7 +1008,71 @@ function animateProgress(fast){
 }
 document.addEventListener('mouseover', e => { const c = e.target.closest?.('[data-cont]'); setHoverCont(c ? c.dataset.cont : null, c?.dataset.country); });
 document.addEventListener('focusin', e => { const c = e.target.closest?.('[data-cont]'); setHoverCont(c ? c.dataset.cont : null, c?.dataset.country); });
-document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('.wp[data-go]')) { e.preventDefault(); go(e.target.dataset.go); } });
+document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('.wp[data-go]')) { e.preventDefault(); go(e.target.dataset.go); }
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('.yb[data-y]')) { e.preventDefault(); e.target.dispatchEvent(new MouseEvent('click', { bubbles:true })); } });
+
+/* ---------- Viajes por año ---------- */
+let yearSel = null;
+const yearOf = p => /^\d{4}/.test(p?.visited || '') ? p.visited.slice(0, 4) : '';
+function yearAtlas(){
+  if (!yearSel || route.level !== 'trips') return null;
+  const s = new Set();
+  for (const p of Object.values(S.places)) if (yearOf(p) === yearSel) { const c = S.countries[p.country]; if (c) s.add(c.atlasId); }
+  return s;
+}
+/* Un viaje = un país en un año */
+function tripsByYear(){
+  const m = new Map();
+  for (const [id,p] of Object.entries(S.places)) {
+    const y = yearOf(p); if (!y || !S.countries[p.country]) continue;
+    const k = y + '|' + p.country;
+    if (!m.has(k)) m.set(k, { year:y, country:p.country, places:[] });
+    m.get(k).places.push({ id, ...p });
+  }
+  const first = t => t.places.map(p => p.visited).sort()[0] || '';
+  return [...m.values()].sort((a,b) => a.year.localeCompare(b.year) || first(a).localeCompare(first(b)));
+}
+const MONTHS = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const yearOpts = sel => { const cy = new Date().getFullYear(); let o = ''; for (let y = cy; y >= 1950; y--) o += `<option ${String(y) === sel ? 'selected' : ''}>${y}</option>`; return o; };
+function whenFields(id, val, label){
+  const y = (val || '').slice(0, 4), m = (val || '').slice(5, 7);
+  return `<div class="field"><label for="${id}-y">${label}</label><div class="when">
+    <select id="${id}-y"><option value="">Año…</option>${yearOpts(y)}</select>
+    <select id="${id}-m" aria-label="Mes (opcional)"><option value="">Mes (opcional)</option>${MONTHS.map((n,i) => { const v = String(i+1).padStart(2,'0'); return `<option value="${v}" ${v === m ? 'selected' : ''}>${n}</option>`; }).join('')}</select>
+  </div></div>`;
+}
+const whenVal = (o, id) => { const y = o.querySelector('#' + id + '-y').value, m = o.querySelector('#' + id + '-m').value; return y ? (m ? y + '-' + m : y) : ''; };
+let undatedOpen = false;
+function tripsLink(){
+  const trips = tripsByYear(), ys = [...new Set(trips.map(t => t.year))];
+  const meta = trips.length ? `${trips.length} viaje${trips.length > 1 ? 's' : ''} · ${ys[0]}${ys.length > 1 ? '–' + ys[ys.length - 1] : ''}` : 'Añade los años';
+  return `<button class="tl-link" data-go="viajes"><span class="tl-link-t">Cronología <i>por año</i></span><span class="tl-link-m">${meta}</span><span class="go">›</span></button>`;
+}
+function viewTrips(){
+  const trips = tripsByYear();
+  const undated = Object.entries(S.places).filter(([,p]) => !yearOf(p)).map(([id,p]) => ({ id, ...p }))
+    .sort((a,b) => (a.order ?? 1e9) - (b.order ?? 1e9));
+  const years = [...new Set(trips.map(t => t.year))];
+  if (yearSel && !years.includes(yearSel)) yearSel = null;
+  const shown = yearSel ? years.filter(y => y === yearSel) : years;
+  const yearsNav = years.length > 1 ? `<nav class="tl-nav" aria-label="Elegir año"><button data-act="year" data-y="" class="${yearSel ? '' : 'on'}">Todos</button>${years.map(y => `<button data-act="year" data-y="${y}" class="${y === yearSel ? 'on' : ''}">${y}</button>`).join('')}</nav>` : '';
+  const body = years.length ? `<div class="tl">${shown.map(y => `<section class="tl-year"><span class="tl-y">${y}</span><div class="tl-rows">${trips.filter(t => t.year === y).map(t => { const c = S.countries[t.country];
+      return `<button class="tl-row" data-go="${esc(t.country)}"><span class="flag">${flag(c.a2)}</span><span class="tl-c">${esc(c.name)}</span><small>${t.places.map(p => esc(p.name)).join(' · ')}</small></button>`; }).join('')}</div></section>`).join('')}</div>`
+    : `<p class="tl-empty">Todavía no hay años. Ponle el año a cada lugar aquí abajo y tus viajes se ordenarán solos.</p>`;
+  const und = undated.length && canWrite ? `<details class="tl-undated" ${undatedOpen || !years.length ? 'open' : ''}><summary>${undated.length} lugar${undated.length > 1 ? 'es' : ''} sin año</summary>${undated.map(p => { const c = S.countries[p.country] || {};
+      return `<label class="tl-set"><span class="flag">${flag(c.a2)}</span><span class="tl-c">${esc(p.name)}</span><select data-change="set-year" data-place="${esc(p.id)}" aria-label="Año en que fuiste a ${esc(p.name)}"><option value="">Año</option>${yearOpts('')}</select></label>`; }).join('')}</details>` : '';
+  return `<div><p class="eyebrow">Cronología</p><h2>Por <em>año</em></h2></div>${yearsNav}${body}${und}`;
+}
+document.addEventListener('toggle', e => { if (e.target.matches?.('.tl-undated')) undatedOpen = e.target.open; }, true);
+document.addEventListener('change', async e => {
+  const el = e.target.closest?.('[data-change]'); if (!el) return;
+  if (el.dataset.change === 'year-filter') { yearSel = el.value || null; render.keep = true; render(); }
+  else if (el.dataset.change === 'set-year' && el.value) {
+    el.disabled = true; render.keep = true;
+    try { await DB.collection('places').doc(el.dataset.place).update({ visited: el.value }); toast(`${S.places[el.dataset.place]?.name || 'Lugar'}: ${el.value}`); }
+    catch { el.disabled = false; render.keep = false; toast('No se pudo guardar. Inténtalo de nuevo.'); }
+  }
+});
 
 function signatureBlock(holder){
   const initials = holder ? holder.split(/\s+/).filter(Boolean).map(w => w[0].toUpperCase()).join('') : '';
@@ -896,7 +1134,7 @@ function viewPlace(id){
         ${p.iata ? `<span class="chip ghost mono" title="Aeropuerto más cercano">✈ ${esc(p.iata)}</span>` : ''}
         ${p.visited ? `<span class="chip">${esc(fmtMonth(p.visited))}</span>` : ''}
       </div>
-    </div><div class="stamp round" style="${stampVars(id)}" aria-hidden="true"><div><small>${esc(c.a2 || '')} · Entrada</small><div class="code">${esc(p.iata || mrzTxt(p.name).slice(0,3))}</div><small>${esc(p.visited ? p.visited.replace('-', '·') : 'Visitado')}</small></div></div></div>
+    </div><div class="stamp round" style="${stampVars(id)}" aria-hidden="true"><div><small>${esc(c.a2 || '')} · Entrada</small><div class="code">${esc(p.iata || mrzTxt(p.name).slice(0,3))}</div><small>${esc(p.visited ? p.visited.split('-').reverse().join('·') : 'Visitado')}</small></div></div></div>
     ${p.facts?.length ? `<div class="note"><span class="eyebrow">¿Sabías que…? · Observaciones</span>${p.facts.map(f => `<p>${esc(f)}</p>`).join('')}</div>` : ''}
     ${p.musts?.length ? `<div class="section"><h3>Imprescindibles <i>Must-see</i></h3><ul class="musts">${p.musts.map(m => `<li>${esc(m)}</li>`).join('')}</ul></div>` : ''}
     ${p.source === 'claude' ? `<p class="ai">Datos generados por Claude al añadir el lugar. Pueden contener errores.</p>` : p.source === 'web' ? `<p class="ai">Ubicación de OpenStreetMap y dato de Wikipedia.</p>` : ''}
@@ -958,6 +1196,7 @@ document.addEventListener('click', e => {
     const old = $('#prog'); const tmp = document.createElement('div'); tmp.innerHTML = progressBlock(); old.replaceWith(tmp.firstElementChild);
     setHoverCont.k = null; hoverCont = null; dirty = true; animateProgress(true);
   }
+  else if (act === 'year') { yearSel = a.dataset.y || null; render.keep = true; render(); }
   else if (act === 'next-q') { quiz.q = newQuestion(); render(); flyTo(view.lon, view.lat, 1, 1200); }
 });
 $('#lbclose').onclick = () => { $('#lightbox').hidden = true; $('#lbimg').src = ''; };
@@ -991,7 +1230,7 @@ function openAddPlace(prefAtlas){
       <div class="field"><label for="pl-name">Ciudad o lugar</label><input id="pl-name" required maxlength="80" placeholder="Por ejemplo: Lisboa"></div>
       <div class="field"><label for="pl-country">País</label><select id="pl-country" required><option value="">Elige un país…</option>${opts.map(([id,v]) => `<option value="${esc(id)}" ${id === ctxAtlas ? 'selected' : ''}>${esc(v[1])}</option>`).join('')}</select></div>
       <div class="field" id="pl-cont-wrap" hidden><label for="pl-cont">Continente</label><select id="pl-cont">${CONT_ORDER.map(c => `<option value="${c}">${CONTINENTS[c].name}</option>`).join('')}</select><span class="hint">Es un país nuevo en tu atlas.</span></div>
-      <div class="field"><label for="pl-date">Cuándo fuiste (opcional)</label><input id="pl-date" type="month"></div>
+      ${whenFields('pl', '', 'Cuándo fuiste (opcional)')}
       <p class="hint">Después te pediré que confirmes dónde está en el globo. Si hay internet, lo ubicaré con OpenStreetMap y traeré un dato curioso de Wikipedia.</p>
       <div class="row-btns"><button class="btn" type="submit">Continuar</button><button class="btn sec" type="button" data-close>Cancelar</button></div>
     </form>`, o => {
@@ -1001,7 +1240,7 @@ function openAddPlace(prefAtlas){
       o.querySelector('[data-close]').onclick = closeSheet;
       o.querySelector('#fplace').onsubmit = ev => {
         ev.preventDefault();
-        const draft = { name:o.querySelector('#pl-name').value.trim(), atlasId:sel.value, visited:o.querySelector('#pl-date').value || '', continent:cont.value };
+        const draft = { name:o.querySelector('#pl-name').value.trim(), atlasId:sel.value, visited:whenVal(o, 'pl'), continent:cont.value };
         if (!draft.name || !draft.atlasId) return;
         closeSheet(); locatePlace(draft);
       };
@@ -1084,7 +1323,7 @@ async function savePlace(){
   let cid = countryByAtlas(d.atlasId);
   if (!cid) {
     const inf = INFO[d.atlasId] || ['', d.atlasId, 0];
-    cid = uniqueId(slug(inf[1]), id => S.countries[id] || S.places[id] || CONTINENTS[id] || id === 'quiz');
+    cid = uniqueId(slug(inf[1]), id => S.countries[id] || S.places[id] || CONTINENTS[id] || id === 'quiz' || id === 'viajes');
     const pi = info.pais || {};
     const cont = CONT_ORDER.includes(pi.continente) && !d.continentTouched ? d.continent : d.continent;
     await DB.collection('countries').doc(cid).set({
@@ -1093,7 +1332,7 @@ async function savePlace(){
       source: info.pais ? 'web' : 'manual', createdAt: now });
   }
   const pname = d.name;
-  const pid = uniqueId(slug(pname), id => S.places[id] || S.countries[id] || CONTINENTS[id] || id === 'quiz' || (id === cid));
+  const pid = uniqueId(slug(pname), id => S.places[id] || S.countries[id] || CONTINENTS[id] || id === 'quiz' || id === 'viajes' || (id === cid));
   const arr = (x, n) => Array.isArray(x) ? x.filter(s => typeof s === 'string' && s.trim()).slice(0, n).map(s => s.slice(0, 300)) : [];
   await DB.collection('places').doc(pid).set({
     name: pname, country: cid, lat: d.lat, lon: d.lon, visited: d.visited,
@@ -1130,7 +1369,7 @@ function openEditPlace(pid){
     <h3>Editar ${esc(p.name)}</h3>
     <form id="fedit" class="section">
       <div class="field"><label for="ed-name">Nombre</label><input id="ed-name" required maxlength="80" value="${esc(p.name)}"></div>
-      <div class="field"><label for="ed-date">Cuándo fuiste</label><input id="ed-date" type="month" value="${esc(p.visited || '')}"></div>
+      ${whenFields('ed', p.visited, 'Cuándo fuiste')}
       <div class="field"><label for="ed-musts">Imprescindibles (uno por línea)</label><textarea id="ed-musts" style="min-height:80px">${esc((p.musts || []).join('\n'))}</textarea></div>
       <p class="err" id="ed-err" hidden></p>
       <div class="row-btns"><button class="btn" type="submit">Guardar</button><button class="btn sec" type="button" data-close>Cancelar</button></div>
@@ -1141,7 +1380,7 @@ function openEditPlace(pid){
       o.querySelector('#fedit').onsubmit = async ev => {
         ev.preventDefault();
         try {
-          await DB.collection('places').doc(pid).update({ name: o.querySelector('#ed-name').value.trim() || p.name, visited: o.querySelector('#ed-date').value || '',
+          await DB.collection('places').doc(pid).update({ name: o.querySelector('#ed-name').value.trim() || p.name, visited: whenVal(o, 'ed'),
             musts: o.querySelector('#ed-musts').value.split('\n').map(s => s.trim()).filter(Boolean).slice(0, 8) });
           closeSheet(); toast('Cambios guardados');
         } catch (e) { const er = o.querySelector('#ed-err'); er.hidden = false; er.textContent = 'No se pudo guardar. Inténtalo de nuevo.'; }
@@ -1188,7 +1427,7 @@ function openMemory(pid, mid){
     <h3>${m ? 'Editar recuerdo' : 'Nuevo recuerdo'} · ${esc(p.name)}</h3>
     <form id="fmem" class="section">
       <div class="field"><label for="mm-title">Título</label><input id="mm-title" maxlength="90" placeholder="Por ejemplo: Atardecer en el puerto" value="${esc(m?.title || '')}"></div>
-      <div class="field"><label for="mm-date">Fecha</label><input id="mm-date" type="date" value="${esc(m?.date || (p.visited ? p.visited + '-01' : today))}"></div>
+      <div class="field"><label for="mm-date">Fecha</label><input id="mm-date" type="date" value="${esc(m?.date || (p.visited ? (p.visited.length === 4 ? p.visited + '-01-01' : p.visited + '-01') : today))}"></div>
       <div class="field"><label for="mm-text">Qué recuerdas</label><textarea id="mm-text" maxlength="4000" placeholder="Con quién fuiste, qué comiste, qué te sorprendió…">${esc(m?.text || '')}</textarea></div>
       ${ASSETS ? `<div class="field"><label for="mm-files">Fotos</label><div class="photos" id="mm-cur"></div><input id="mm-files" type="file" accept="image/*" multiple><span class="hint">Se reducen a 1800 px para ocupar menos.</span></div>` : `<p class="hint">Solo quien puede editar esta página puede subir fotos.</p>`}
       <p class="err" id="mm-err" hidden></p>
